@@ -1,0 +1,24 @@
+{
+  "name": "ds18b20.js",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "node app",
+    "test": "node_modules/.bin/tap ./test",
+    "lint": "node_modules/.bin/jshint ."
+  },
+  "pre-commit": [
+    "lint"
+  ],
+  "main": "./app",
+  "dependencies": {
+    "async": "~0.2.9",
+    "sandal": "~1.0.1",
+    "tap": "~0.4.6",
+    "execSync": "~1.0.1-pre"
+  },
+  "devDependencies": {
+    "jshint": "~2.1.10",
+    "pre-commit": "~0.0.4",
+    "tap": "~0.4.4"
+  }
+}
