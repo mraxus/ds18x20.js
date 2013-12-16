@@ -15,6 +15,7 @@ module.exports = function () {
 		.object('basePath', '/sys/bus/w1/devices/')
 
 		// Library components
+		.object('driver', require('./lib/driver'))
 		.service('deviceLister', require('./lib/device-lister'))
 
 		// Logger functionality
