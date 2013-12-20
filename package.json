@@ -6,9 +6,6 @@
     "test": "node_modules/.bin/tap ./test",
     "lint": "node_modules/.bin/jshint ."
   },
-  "pre-commit": [
-    "lint"
-  ],
   "main": "./app",
   "dependencies": {
     "async": "~0.2.9",
