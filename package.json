@@ -15,7 +15,6 @@
   },
   "devDependencies": {
     "jshint": "~2.1.10",
-    "pre-commit": "~0.0.4",
     "tap": "~0.4.4"
   }
 }
