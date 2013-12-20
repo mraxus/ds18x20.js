@@ -28,14 +28,20 @@ function getTester(t, testDirName, expectedResult) {
 }
 
 test('Getting no device names from directory...', function (t) {
-	getTester(t, 'no-devices', []);
+	getTester(t, '0-devices', []);
 });
 test('Getting one device name from directory...', function (t) {
-	getTester(t, 'one-device', ['28-011111111111']);
+	getTester(t, '1-device', ['28-011111111111']);
 });
 test('Getting two device names from directory...', function (t) {
-	getTester(t, 'two-devices', ['28-011111111111', '28-022222222222']);
+	getTester(t, '2-devices', ['28-011111111111', '28-022222222222']);
 });
 test('Getting five device names from directory...', function (t) {
-	getTester(t, 'five-devices', ['28-011111111111', '28-022222222222', '28-033333333333', '28-044444444444', '28-055555555555']);
+	getTester(t, '6-devices', [
+		'28-011111111111',
+		'28-022222222222',
+		'28-033333333333',
+		'28-044444444444',
+		'28-055555555555',
+		'28-066666666666']);
 });
