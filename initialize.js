@@ -17,6 +17,7 @@ module.exports = function () {
 		// Library components
 		.object('driver', require('./lib/driver'))
 		.service('deviceLister', require('./lib/device-lister'))
+		.service('deviceReader', require('./lib/device-reader'))
 
 		// Logger functionality
 		.object('logger', console)

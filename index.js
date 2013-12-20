@@ -1,6 +1,6 @@
 'use strict';
 
-require('./initialize')().resolve(function (err, c, deviceLister, driver) {
+require('./initialize')().resolve(function (err, c, deviceLister, deviceReader, driver) {
 
 	if (err) {
 		console.log(err);
@@ -19,16 +19,10 @@ require('./initialize')().resolve(function (err, c, deviceLister, driver) {
 		c('Driver loaded!');
 	}
 
-	c('  deviceLister.get with no args:', deviceLister.get());
-
-	return;
-
-	c('  deviceLister.get with an string arg:');
-	deviceLister.get('with some args');
-
-	c('  deviceLister.get with callback:');
-	deviceLister.get(function (err) {
-		c('done');
+	deviceLister.get(function (err, ids) {
+//		c('  deviceLister.get with callback:', ids);
+		
+		c(ids.map(function (id) { return id + ': ' + deviceReader.read(id) + ' C'; }));
 	});
 
 });
