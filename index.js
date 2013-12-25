@@ -1,28 +1,50 @@
 'use strict';
 
-require('./initialize')().resolve(function (err, c, deviceLister, deviceReader, driver) {
+var async = require('async'),
+    fs = require('fs'),
 
-	if (err) {
-		console.log(err);
-		process.exit(1);
-	}
+    driver = require('./lib/driver'),
+    Lister = require('./lib/device-lister'),
+    Reader = require('./lib/device-reader'),
+    parser = require('./lib/parser'),
 
-	c('App is starting...');
+    lister = new Lister(fs, '/sys/devices/w1_bus_master1/w1_master_slaves'),
+    reader = new Reader(fs, '/sys/bus/w1/devices/');
 
-	var loaded = driver.isLoaded();
-	
-	c('Driver loaded:', loaded);
+var Ds18x20 = function () {
 
-	if (!loaded) {
-		c('Loading driver...');
-		driver.load();
-		c('Driver loaded!');
-	}
+};
 
-	deviceLister.get(function (err, ids) {
-//		c('  deviceLister.get with callback:', ids);
-		
-		c(ids.map(function (id) { return id + ': ' + deviceReader.read(id) + ' C'; }));
-	});
+Ds18x20.prototype.list = function (callback) {
+    return lister.get(callback);
+};
 
-});
+Ds18x20.prototype.get = function (ids, callback) {
+
+    if (typeof callback === "function") {
+
+        return async.map(ids, reader.read, function (err, results) {
+            if (err) return callback(err);
+
+            return callback(null, results.map(parser));
+        });
+    }
+
+    return ids.map(reader.read).map(parser);
+};
+
+Ds18x20.prototype.getAll = function (callback) {
+
+    if (typeof callback === "function") {
+
+        var that = this;
+
+        return this.list(function (err, ids) {
+            that.get(ids, callback);
+        });
+    }
+
+    return this.get(this.list());
+};
+
+module.exports = Ds18x20;
