@@ -15,6 +15,8 @@ module.exports = function () {
 		.object('basePath', '/sys/bus/w1/devices/')
 
 		// Library components
+        .service('ds18x20', require('./lib/ds18x20'))
+
 		.object('driver', require('./lib/driver'))
 		.service('lister', require('./lib/device-lister'))
 		.service('reader', require('./lib/device-reader'))
@@ -22,7 +24,6 @@ module.exports = function () {
 
 		// Logger functionality
 		.object('logger', console)
-		.factory('c', function (logger) { return logger.log; })
 	;
 
 	return sandal;
