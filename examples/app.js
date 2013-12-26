@@ -1,9 +1,7 @@
 'use strict';
 
-var Driver = require('../index'),
-    c = console.log,
-
-    driver = new Driver();
+var driver = require('../index'),
+    c = console.log;
 
 c('list sync', driver.list());
 c('getAll sync', driver.getAll());
