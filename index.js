@@ -3,13 +3,15 @@
 var async = require('async'),
     fs = require('fs'),
 
-    driver = require('./lib/driver'),
-    Lister = require('./lib/device-lister'),
-    Reader = require('./lib/device-reader'),
-    parser = require('./lib/parser'),
+    driver, parser, lister, reader;
 
-    lister = new Lister(fs, '/sys/devices/w1_bus_master1/w1_master_slaves'),
-    reader = new Reader(fs, '/sys/bus/w1/devices/');
+require('./initialize')().resolve( ['driver', 'lister', 'reader', 'parser'],
+    // Synchrounus callback
+    function (err, d, l, r, p) {
+        if (err) { console.error(err); process.exit(255); }
+        driver = d; lister = l; reader = r; parser = p;
+    }
+);
 
 var Ds18x20 = function () {
 
