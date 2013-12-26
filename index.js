@@ -23,14 +23,14 @@ Ds18x20.prototype.get = function (ids, callback) {
 
     if (typeof callback === "function") {
 
-        return async.map(ids, reader.read, function (err, results) {
+        return async.map(ids, function (id, done) {reader.read(id, done); }, function (err, results) {
             if (err) return callback(err);
 
             return callback(null, results.map(parser));
         });
     }
 
-    return ids.map(reader.read).map(parser);
+    return ids.map(function (id) { return reader.read(id); }).map(parser);
 };
 
 Ds18x20.prototype.getAll = function (callback) {
