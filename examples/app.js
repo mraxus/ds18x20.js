@@ -1,6 +1,6 @@
 'use strict';
 
-var Driver = require('./index'),
+var Driver = require('../index'),
     c = console.log,
 
     driver = new Driver();
