@@ -1,2 +1,2 @@
-85 01 4b 46 7f ff 0b 10 5f : crc=5f YES
-85 01 4b 46 7f ff 0b 10 5f t=24312
+40 06 4b 46 7f ff 10 10 ae : crc=ae YES
+40 06 4b 46 7f ff 10 10 ae t=100000
