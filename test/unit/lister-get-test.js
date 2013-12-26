@@ -7,7 +7,7 @@ var test = require('tap').test,
 
 function getTester(t, testDirName, expectedResult) {
 
-	var deviceLister = new DeviceLister(fs, path.resolve(__dirname, 'dirs', testDirName, 'w1_master_slaves'));
+	var deviceLister = new DeviceLister(fs, path.resolve(__dirname, 'data', 'dirs', testDirName, 'w1_master_slaves'));
 
 	t.test('... synchronous...', function (t) {
 

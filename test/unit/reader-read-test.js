@@ -10,7 +10,7 @@ var test = require('tap').test,
 
 function readTester(t, testDirName, deviceName) {
 
-	var deviceReader = new DeviceReader(fs, path.resolve(__dirname, 'dirs', testDirName));
+	var deviceReader = new DeviceReader(fs, path.resolve(__dirname, 'data', 'dirs', testDirName));
 
 	t.test('... synchronous...', function (t) {
 
