@@ -17,9 +17,9 @@ module.exports = function () {
 		// Library components
         .service('ds18x20', require('./lib/ds18x20'))
 
-		.object('driver', require('./lib/driver'))
-		.service('lister', require('./lib/device-lister'))
-		.service('reader', require('./lib/device-reader'))
+		.service('driver', require('./lib/driver'))
+		.service('lister', require('./lib/lister'))
+		.service('reader', require('./lib/reader'))
         .object('parser', require('./lib/parser'))
 
 		// Logger functionality
