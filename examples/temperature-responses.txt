@@ -1,0 +1,139 @@
+82 82 25 a3 bf 7f 07 08 a1 : crc=ce NO
+01 05 4b 46 7f ff 0f 10 17 t=-2007875
+
+f2 81 25 a3 bf 7f 07 88 e2 : crc=b0 NO
+f1 01 4b 46 7f ff 0f 10 c4 t=-2016875
+
+
+
+96 01 4b 46 7f ff 0a 10 0a : crc=0a YES
+96 01 4b 46 7f ff 0a 10 0a t=25375
+
+98 01 4b 46 7f ff 08 10 22 : crc=22 YES
+98 01 4b 46 7f ff 08 10 22 t=25500
+
+a0 01 4b 46 7f ff 10 10 6e : crc=6e YES
+a0 01 4b 46 7f ff 10 10 6e t=26000
+
+a6 01 4b 46 7f ff 0a 10 f6 : crc=f6 YES
+a6 01 4b 46 7f ff 0a 10 f6 t=26375
+
+a8 01 4b 46 7f ff 08 10 de : crc=de YES
+a8 01 4b 46 7f ff 08 10 de t=26500
+
+aa 01 4b 46 7f ff 06 10 84 : crc=84 YES
+aa 01 4b 46 7f ff 06 10 84 t=26625
+
+ab 01 4b 46 7f ff 05 10 92 : crc=92 YES
+ab 01 4b 46 7f ff 05 10 92 t=26687
+
+ac 01 4b 46 7f ff 04 10 86 : crc=86 YES
+ac 01 4b 46 7f ff 04 10 86 t=26750
+
+ad 01 4b 46 7f ff 03 10 ab : crc=ab YES
+ad 01 4b 46 7f ff 03 10 ab t=26812
+
+b2 01 4b 46 7f ff 0e 10 8c : crc=8c YES
+b2 01 4b 46 7f ff 0e 10 8c t=27125
+
+c1 01 4b 46 7f ff 0f 10 38 : crc=38 YES
+c1 01 4b 46 7f ff 0f 10 38 t=28062
+
+d1 01 4b 46 7f ff 0f 10 6c : crc=6c YES
+d1 01 4b 46 7f ff 0f 10 6c t=29062
+
+dd 01 4b 46 7f ff 03 10 1e : crc=1e YES
+dd 01 4b 46 7f ff 03 10 1e t=29812
+
+e0 01 4b 46 7f ff 10 10 27 : crc=27 YES
+e0 01 4b 46 7f ff 10 10 27 t=30000
+
+e8 01 4b 46 7f ff 08 10 97 : crc=97 YES
+e8 01 4b 46 7f ff 08 10 97 t=30500
+
+f0 01 4b 46 7f ff 10 10 73 : crc=73 YES
+f0 01 4b 46 7f ff 10 10 73 t=31000
+
+f7 01 4b 46 7f ff 09 10 fd : crc=fd YES
+f7 01 4b 46 7f ff 09 10 fd t=31437
+
+46 02 4b 46 7f ff 0a 10 c2 : crc=c2 YES
+46 02 4b 46 7f ff 0a 10 c2 t=36375
+
+fe 03 4b 46 7f ff 02 10 cd : crc=cd YES
+fe 03 4b 46 7f ff 02 10 cd t=63875
+
+84 04 4b 46 7f ff 0c 10 bb : crc=bb YES
+84 04 4b 46 7f ff 0c 10 bb t=72250
+
+f1 04 4b 46 7f ff 0f 10 0d : crc=0d YES
+f1 04 4b 46 7f ff 0f 10 0d t=79062
+
+01 05 4b 46 7f ff 0f 10 17 : crc=17 YES
+01 05 4b 46 7f ff 0f 10 17 t=80062
+
+70 05 4b 46 7f ff 10 10 15 : crc=15 YES
+70 05 4b 46 7f ff 10 10 15 t=87000
+
+9f 05 4b 46 7f ff 01 10 b4 : crc=b4 YES
+9f 05 4b 46 7f ff 01 10 b4 t=89937
+
+ae 05 4b 46 7f ff 02 10 5e : crc=5e YES
+ae 05 4b 46 7f ff 02 10 5e t=90875
+
+b8 05 4b 46 7f ff 08 10 7e : crc=7e YES
+b8 05 4b 46 7f ff 08 10 7e t=91500
+
+c9 05 4b 46 7f ff 07 10 90 : crc=90 YES
+c9 05 4b 46 7f ff 07 10 90 t=92562
+
+d0 05 4b 46 7f ff 10 10 2f : crc=2f YES
+d0 05 4b 46 7f ff 10 10 2f t=93000
+
+eb 05 4b 46 7f ff 05 10 2f : crc=2f YES
+eb 05 4b 46 7f ff 05 10 2f t=94687
+
+ff 05 4b 46 7f ff 01 10 55 : crc=55 YES
+ff 05 4b 46 7f ff 01 10 55 t=95937
+
+0f 06 4b 46 7f ff 01 10 35 : crc=35 YES
+0f 06 4b 46 7f ff 01 10 35 t=96937
+
+20 06 4b 46 7f ff 10 10 4f : crc=4f YES
+20 06 4b 46 7f ff 10 10 4f t=98000
+
+28 06 4b 46 7f ff 08 10 ff : crc=ff YES
+28 06 4b 46 7f ff 08 10 ff t=98500
+
+2c 06 4b 46 7f ff 04 10 a7 : crc=a7 YES
+2c 06 4b 46 7f ff 04 10 a7 t=98750
+
+30 06 4b 46 7f ff 10 10 1b : crc=1b YES
+30 06 4b 46 7f ff 10 10 1b t=99000
+
+32 06 4b 46 7f ff 0e 10 ad : crc=ad YES
+32 06 4b 46 7f ff 0e 10 ad t=99125
+
+36 06 4b 46 7f ff 0a 10 83 : crc=83 YES
+36 06 4b 46 7f ff 0a 10 83 t=99375
+
+37 06 4b 46 7f ff 09 10 95 : crc=95 YES
+37 06 4b 46 7f ff 09 10 95 t=99437
+
+38 06 4b 46 7f ff 08 10 ab : crc=ab YES
+38 06 4b 46 7f ff 08 10 ab t=99500
+
+3a 06 4b 46 7f ff 06 10 f1 : crc=f1 YES
+3a 06 4b 46 7f ff 06 10 f1 t=99625
+
+3c 06 4b 46 7f ff 04 10 f3 : crc=f3 YES
+3c 06 4b 46 7f ff 04 10 f3 t=99750
+
+3d 06 4b 46 7f ff 03 10 de : crc=de YES
+3d 06 4b 46 7f ff 03 10 de t=99812
+
+3f 06 4b 46 7f ff 01 10 c9 : crc=c9 YES
+3f 06 4b 46 7f ff 01 10 c9 t=99937
+
+40 06 4b 46 7f ff 10 10 ae : crc=ae YES
+40 06 4b 46 7f ff 10 10 ae t=100000
