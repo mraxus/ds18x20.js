@@ -3,7 +3,7 @@
 var test = require('tap').test,
 	fs = require('fs'),
 	path = require('path'),
-	DeviceReader = require('../../lib/device-reader');
+	DeviceReader = require('../../lib/reader');
 
 function readTester(t, testDirName, deviceName, expectedOutput) {
 

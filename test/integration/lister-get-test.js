@@ -3,7 +3,7 @@
 var test = require('tap').test,
 	fs = require('fs'),
 	path = require('path'),
-	DeviceLister = require('../../lib/device-lister');
+	DeviceLister = require('../../lib/lister');
 
 function getTester(t, testDirName, expectedResult) {
 
