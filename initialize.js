@@ -8,6 +8,8 @@ module.exports = function () {
 	sandal
 		// External dependencies
 		.object('fs', require('fs'))
+		.object('exec', require('child_process').exec)
+		.object('execSync', require('execSync').run)
 
 		// Configurations
 		.object('driverBasePath', '/sys/bus/w1')
@@ -15,12 +17,12 @@ module.exports = function () {
 		.object('basePath', '/sys/bus/w1/devices/')
 
 		// Library components
-        .service('ds18x20', require('./lib/ds18x20'))
+		.service('ds18x20', require('./lib/ds18x20'))
 
 		.service('driver', require('./lib/driver'))
 		.service('lister', require('./lib/lister'))
 		.service('reader', require('./lib/reader'))
-        .object('parser', require('./lib/parser'))
+		.object('parser', require('./lib/parser'))
 
 		// Logger functionality
 		.object('logger', console)
