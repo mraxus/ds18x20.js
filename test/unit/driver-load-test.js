@@ -3,7 +3,6 @@
 var test = require('tap').test,
 
     fs = require('fs'),
-    path = require('path'),
     exec, execSync,
 
     Driver = require('../../lib/driver'),
@@ -55,10 +54,9 @@ function testLoad(t) {
     });
     t.test('... asynchronous...', function (t) {
 
-        driver.load(function (err, result) {
+        driver.load(function (err) {
 
             t.notOk(err, 'should not error');
-            t.equal(result, true, 'should return true');
             t.end();
         });
     });
