@@ -3,11 +3,14 @@
 var test = require('tap').test,
 	fs = require('fs'),
 	path = require('path'),
-	Lister = require('../../lib/lister');
+
+	Lister = require('../../lib/lister'),
+	Ds18x20 = require('../../lib/ds18x20');
 
 function getTester(t, testDirName, expectedResult) {
 
-	var lister = new Lister(fs, path.resolve(__dirname, 'data', 'dirs', testDirName, 'w1_master_slaves'));
+	var lister = new Lister(fs, path.resolve(__dirname, 'data', 'dirs', testDirName, 'w1_master_slaves')),
+		ds18x20 = new Ds18x20(null, lister, null, null);
 
 	function verify(t, err, result) {
 
@@ -17,10 +20,10 @@ function getTester(t, testDirName, expectedResult) {
 	}
 
 	t.test('... synchronous...', function (t) {
-		verify(t, null, lister.get());
+		verify(t, null, ds18x20.list());
 	});
 	t.test('... asynchronous...', function (t) {
-		lister.get(function (err, result) {
+		ds18x20.list(function (err, result) {
 			verify(t, err, result);
 		});
 	});
