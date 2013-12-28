@@ -44,3 +44,32 @@ test('Getting the temperature from three devices...', function (t) {
 test('Getting the temperature from one device as a string input...', function (t) {
     getTester(t, '28-055555555555');
 });
+
+test('Getting the temperature from non-existing device...', function (t) {
+
+    var deviceId = '28-077777777777',
+        reader = new Reader(fs, path.resolve(__dirname, 'data', 'dirs', '6-devices')),
+        ds18x20 = new Ds18x20(null, null, reader, parser);
+
+    function verify(t, err) {
+
+        t.ok(err, 'should error');
+        t.equal(err.message, 'Could not read device content. Device \'' + deviceId + '\' not found',
+            'should return the expected error message');
+        t.end();
+    }
+
+    t.test('... synchronous...', function (t) {
+        try {
+            ds18x20.get(deviceId);
+        } catch (err) {
+            verify(t, err);
+        }
+    });
+    t.test('... asynchronous...', function (t) {
+        ds18x20.get(deviceId, function (err) {
+            verify(t, err);
+        });
+    });
+    t.end();
+});
