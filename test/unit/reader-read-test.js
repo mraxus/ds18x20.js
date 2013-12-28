@@ -8,13 +8,13 @@ var test = require('tap').test,
     expectedOutput = ["40 06 4b 46 7f ff 10 10 ae : crc=ae YES",
                         "40 06 4b 46 7f ff 10 10 ae t=100000", ""];
 
-function readTester(t, testDirName, deviceName) {
+function readTester(t, testDirName, deviceId) {
 
 	var deviceReader = new DeviceReader(fs, path.resolve(__dirname, 'data', 'dirs', testDirName));
 
 	t.test('... synchronous...', function (t) {
 
-		var result = deviceReader.read(deviceName),
+		var result = deviceReader.read(deviceId),
             resultArray = result.split('\n').map(function (str) { return str.trim(); })
 
 		t.deepEqual(resultArray, expectedOutput, 'should return expected temperature');
@@ -22,7 +22,7 @@ function readTester(t, testDirName, deviceName) {
 	});
 	t.test('... asynchronous...', function (t) {
 
-		deviceReader.read(deviceName, function (err, result) {
+		deviceReader.read(deviceId, function (err, result) {
 
             var resultArray = result.split('\n').map(function (str) { return str.trim(); })
 

@@ -20,7 +20,7 @@ function getTester(t, deviceId) {
         var expectedResult = (result instanceof Array ? result.map(function () { return expectedOutput;}) : expectedOutput);
 
 		t.notOk(err, 'should not error');
-		t.deepEqual(result, expectedResult, 'should return a list with the expected device name(s)');
+		t.deepEqual(result, expectedResult, 'should return a list with the expected device id(s)');
 		t.end();
 	}
 

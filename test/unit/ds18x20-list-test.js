@@ -30,16 +30,16 @@ function getTester(t, testDirName, expectedResult) {
 	t.end();
 }
 
-test('Getting no device names from directory...', function (t) {
+test('Getting no device ids from directory...', function (t) {
 	getTester(t, '0-devices', []);
 });
-test('Getting one device name from directory...', function (t) {
+test('Getting one device id from directory...', function (t) {
 	getTester(t, '1-device', ['28-011111111111']);
 });
-test('Getting two device names from directory...', function (t) {
+test('Getting two device ids from directory...', function (t) {
 	getTester(t, '2-devices', ['28-011111111111', '28-022222222222']);
 });
-test('Getting five device names from directory...', function (t) {
+test('Getting five device ids from directory...', function (t) {
 	getTester(t, '6-devices', [
 		'28-011111111111',
 		'28-022222222222',
