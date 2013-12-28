@@ -3,25 +3,25 @@
 var test = require('tap').test,
 	fs = require('fs'),
 	path = require('path'),
-	DeviceLister = require('../../lib/lister');
+	Lister = require('../../lib/lister');
 
 function getTester(t, testDirName, expectedResult) {
 
-	var deviceLister = new DeviceLister(fs, path.resolve(__dirname, 'data', 'dirs', testDirName, 'w1_master_slaves'));
+	var lister = new Lister(fs, path.resolve(__dirname, 'data', 'dirs', testDirName, 'w1_master_slaves'));
 
-	t.test('... synchronous...', function (t) {
+	function verify(t, err, result) {
 
-		var result = deviceLister.get();
+		t.notOk(err, 'should not error');
 		t.deepEqual(result, expectedResult, 'should return a list with the expected device name(s)');
 		t.end();
+	}
+
+	t.test('... synchronous...', function (t) {
+		verify(t, null, lister.get());
 	});
 	t.test('... asynchronous...', function (t) {
-
-		deviceLister.get(function (err, result) {
-
-			t.notOk(err, 'should not error');
-			t.deepEqual(result, expectedResult, 'should return a list with the expected device name(s)');
-			t.end();
+		lister.get(function (err, result) {
+			verify(t, err, result);
 		});
 	});
 	t.end();
