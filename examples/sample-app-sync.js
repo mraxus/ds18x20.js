@@ -82,7 +82,7 @@ out('');
 var arrayOfIds = [listOfDeviceIds[0], oneId];
 
 out('There is also the possibility to request several measurements in one request:');
-out('Then you call: "sensor.get(' + arrayOfIds.toString() + ')"');
+out('Then you call: "sensor.get(', arrayOfIds, ')"');
 
 if (listOfDeviceIds.length === 1) {
     out('...since you only had one sensor connected, it will be probed twice!');
