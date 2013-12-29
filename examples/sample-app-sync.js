@@ -29,8 +29,7 @@ log('Bye bye for now =-)');
 process.exit(0);
 }
 
-log('Alright. The driver was loaded. Let\'s continue. Maybe you have some sensors connected...');
-
+log('Alright. The driver is loaded. Then let\'s continue. Maybe you have some sensors connected...?');
 
 } else {
 
@@ -57,11 +56,11 @@ log('These devices were found:', listOfDeviceIds, '\n');
 
 log('Not only can you list the devices.');
 log('You can also measure the temperature of all sensors: "driver.getAll()":');
+log('Each sensor that is hooked up to this raspberry pi is now probed in sequence for their temperature.');
+
 log('...');
 
 var result = driver.getAll();
-
-log('Each sensor that is hooked up to this raspberry pi is now probed in sequence for their temperature.');
 
 log('The result:', result);
 
