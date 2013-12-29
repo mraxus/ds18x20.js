@@ -3,8 +3,14 @@
 var sensor = require('../index'),
     out = console.log;
 
-out('Welcome to the sample app for sync handling of the ds18x20 driver.\n');
-
+out('Welcome to the sample app for sync handling of the ds18x20 driver.');
+out('');
+out('Before we start: PLEASE NOTE THE FOLLOWING:');
+out('    This sample is executing everything in sync.');
+out('    That means that ALL operations are blocked until a sync operation is completed.');
+out('    In other words, if you are building a server app or other device that handles incoming requests');
+out('      don\'t use the operations as synchronous used in this sample. Use the operations async instead.');
+out('');
 out('First off, let\'s see if the ds18x20 driver is loaded.');
 out('This we do by calling "sensor.isDriverLoaded()":');
 out('...');
@@ -24,8 +30,8 @@ if (!isLoaded) {
         out('Seems like we are not running this script as a super-user...');
         out('Sorry to say, but we will shut down since we cannot continue with the show.');
         out('try to run "sudo node examples/sample-app-sync" to continue.');
-        out('or load the driver manually by running: "sudo modprobe w1-gpio && sudo modprobe w1-therm"\n');
-
+        out('or load the driver manually by running: "sudo modprobe w1-gpio && sudo modprobe w1-therm"');
+        out('');
         out('Bye bye for now =-)');
         process.exit(0);
     }
@@ -51,8 +57,8 @@ if (listOfDeviceIds.length === 0) {
 }
 
 out('Woohoo, you seem to have some sensors we can play with =-D.');
-out('These devices were found:', listOfDeviceIds, '\n');
-
+out('These devices were found:', listOfDeviceIds, '');
+out('');
 out('Not only can you list the devices.');
 out('You can also measure the temperature of all sensors: "sensor.getAll()":');
 out('Each sensor that is hooked up to this raspberry pi is now probed in sequence for their temperature.');
@@ -96,5 +102,5 @@ var arrayOfResults = sensor.get(arrayOfIds);
 out('And here is the result:', arrayOfResults);
 out('Note that the result is presented in the same order as the input array');
 out('');
-
-out('And that\'s it. Hope you find this sample app and the sensor library useful!');
+out('And that\'s it. Remember to think if you want to use sync or async operations in your app (see top note)');
+out('Hope you find this sample app and the sensor library useful!');
