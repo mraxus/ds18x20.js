@@ -2,7 +2,7 @@
   "name": "ds18x20",
   "description": "A node.JS implementation for using the DS1820, DS18S20 and/or DS18B20 temperature sensor with Raspberry Pi.",
   "version": "0.1.0",
-  "main": "main",
+  "main": "index",
   "author": "Marcus Bergman <mraxus@gmail.com>",
   "scripts": {
     "test": "node_modules/.bin/tap ./test"
