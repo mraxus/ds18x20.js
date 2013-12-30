@@ -1,10 +1,24 @@
 {
   "name": "ds18x20",
+  "description": "A node.JS implementation for using the DS1820, DS18S20 and/or DS18B20 temperature sensor with Raspberry Pi.",
   "version": "0.1.0",
+  "main": "main",
+  "author": "Marcus Bergman <mraxus@gmail.com>",
   "scripts": {
-    "start": "node app",
     "test": "node_modules/.bin/tap ./test"
   },
+  "keywords": [
+    "raspberry pi",
+    "sensor",
+    "temperature",
+    "thermometer",
+    "ds1820",
+    "ds18s20",
+    "ds18b20",
+    "ds18x20",
+    "raspberry",
+    "pi"
+  ],
   "dependencies": {
     "async": "~0.2.9",
     "sandal": "~1.0.1",
@@ -13,5 +27,13 @@
   "devDependencies": {
     "tap": "~0.4.6",
     "interpreted": "~0.4.0"
+  },
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/mraxus/ds18x20.js/raw/master/LICENSE"
+  },
+  "repository": "git://github.com/mraxus/ds18x20.js",
+  "engines": {
+    "node": "*"
   }
 }
