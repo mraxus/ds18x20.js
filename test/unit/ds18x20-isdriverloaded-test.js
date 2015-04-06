@@ -5,7 +5,7 @@ var test = require('tap').test,
     fs = require('fs'),
     path = require('path'),
     exec = require('child_process').exec,
-    execSync = require('execSync'),
+    execSync = require('sync-exec'),
 
 	Driver = require('../../lib/driver'),
 	Ds18x20 = require('../../lib/ds18x20');

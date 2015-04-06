@@ -2,7 +2,7 @@
 
 var Driver = require('../lib/driver'),
     exec = require('child_process').exec,
-    execSync = require('execSync').run,
+    execSync = require('sync-exec').run,
     fs = require('fs'),
 
     driver = new Driver(fs, exec, execSync, '/sys/bus/w1'),

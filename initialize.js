@@ -9,7 +9,7 @@ module.exports = function () {
 		// External dependencies
 		.object('fs', require('fs'))
 		.object('exec', require('child_process').exec)
-		.object('execSync', require('execSync').run)
+		.object('execSync', require('sync-exec').run)
 
 		// Configurations
 		.object('driverBasePath', '/sys/bus/w1')
