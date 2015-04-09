@@ -22,7 +22,7 @@
   "dependencies": {
     "async": "~0.2.9",
     "sandal": "~1.0.1",
-    "execSync": "~1.0.1-pre"
+    "sync-exec": "~0.5"
   },
   "devDependencies": {
     "tap": "~0.4.6",
