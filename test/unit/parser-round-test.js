@@ -3,7 +3,8 @@
 var test = require('tap').test,
     parser = require('../../lib/parser');
 
-var inputs = {'-1.999': -2,
+var inputs = {
+    '-1.999': -2,
     '-1.998': -2,
     '-1.997': -2,
     '-1.996': -2,
@@ -4005,7 +4006,6 @@ var inputs = {'-1.999': -2,
 }
 
 Object.keys(inputs).forEach(function (inputStr) {
-
     var tempStr = 'YES t=' + inputStr * 1000,
     output = parser(tempStr),
     expected = inputs[inputStr];
@@ -4013,5 +4013,4 @@ Object.keys(inputs).forEach(function (inputStr) {
     if (output !== expected) {
         console.log('Bad conversion:', inputStr, ':', tempStr, '->', output, 'expected: ', expected);
     }
-
 });

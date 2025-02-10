@@ -1,12 +1,16 @@
 'use strict';
 
-require('./initialize')().resolve(
+var Constants = require('./constants');
 
-    // Synchrounus callback
-    function (err, ds18x20) {
+var Ds18x20 = require('./lib/ds18x20');
 
-        if (err) { throw err; }
+var Driver = require('./lib/driver');
+var Lister = require('./lib/lister');
+var Reader = require('./lib/reader');
+var parser = require('./lib/parser');
 
-        module.exports = ds18x20;
-    }
-);
+var driver = new Driver(Constants.driverBasePath);
+var lister = new Lister(Constants.listPath);
+var reader = new Reader(Constants.basePath);
+
+module.exports = new Ds18x20(driver, lister, reader, parser);

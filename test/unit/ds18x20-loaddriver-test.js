@@ -2,13 +2,13 @@
 
 var test = require('tap').test,
 
-    fs = require('fs'),
-    exec, execSync,
+  exec,
+  execSync,
 
-    Driver = require('../../lib/driver'),
-	Ds18x20 = require('../../lib/ds18x20'),
-	driver,
-	ds18x20;
+  Driver = require('../../lib/driver'),
+  Ds18x20 = require('../../lib/ds18x20'),
+  driver,
+  ds18x20;
 
 exec = function (cmd, callback) {
     process.nextTick(function () { callback(null, true); });
@@ -16,7 +16,10 @@ exec = function (cmd, callback) {
 execSync = function () {
     return true;
 };
-driver = new Driver(fs, exec, execSync, __dirname);
+driver = new Driver(__dirname);
+driver.exec = exec;
+driver.execSync = execSync;
+
 ds18x20 = new Ds18x20(driver, null, null, null);
 
 

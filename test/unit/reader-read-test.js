@@ -1,7 +1,6 @@
 "use strict";
 
 var test = require('tap').test,
-	fs = require('fs'),
 	path = require('path'),
 	DeviceReader = require('../../lib/reader'),
 
@@ -10,7 +9,7 @@ var test = require('tap').test,
 
 function readTester(t, testDirName, deviceId) {
 
-	var deviceReader = new DeviceReader(fs, path.resolve(__dirname, 'data', 'dirs', testDirName));
+	var deviceReader = new DeviceReader(path.resolve(__dirname, 'data', 'dirs', testDirName));
 
 	t.test('... synchronous...', function (t) {
 
@@ -21,7 +20,6 @@ function readTester(t, testDirName, deviceId) {
 		t.end();
 	});
 	t.test('... asynchronous...', function (t) {
-
 		deviceReader.read(deviceId, function (err, result) {
 
             var resultArray = result.split('\n').map(function (str) { return str.trim(); })

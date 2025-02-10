@@ -1,7 +1,6 @@
 "use strict";
 
 var test = require('tap').test,
-	fs = require('fs'),
 	path = require('path'),
 
 	Lister = require('../../lib/lister'),
@@ -9,7 +8,7 @@ var test = require('tap').test,
 
 function getTester(t, testDirName, expectedResult) {
 
-	var lister = new Lister(fs, path.resolve(__dirname, 'data', 'dirs', testDirName, 'w1_master_slaves')),
+	var lister = new Lister(path.resolve(__dirname, 'data', 'dirs', testDirName, 'w1_master_slaves')),
 		ds18x20 = new Ds18x20(null, lister, null, null);
 
 	function verify(t, err, result) {

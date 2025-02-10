@@ -1,7 +1,6 @@
 "use strict";
 
 var test = require('tap').test,
-	fs = require('fs'),
 	path = require('path'),
 
     Lister = require('../../lib/lister'),
@@ -11,8 +10,8 @@ var test = require('tap').test,
 
 function getAllTester(t, deviceChoice, expectedCount) {
 
-	var lister = new Lister(fs, path.resolve(__dirname, 'data', 'dirs', deviceChoice, 'w1_master_slaves')),
-        reader = new Reader(fs, path.resolve(__dirname, 'data', 'dirs', deviceChoice)),
+	var lister = new Lister(path.resolve(__dirname, 'data', 'dirs', deviceChoice, 'w1_master_slaves')),
+        reader = new Reader(path.resolve(__dirname, 'data', 'dirs', deviceChoice)),
         ds18x20 = new Ds18x20(null, lister, reader, parser);
 
     function generateExpectedResult() {

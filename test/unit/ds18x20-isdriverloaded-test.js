@@ -2,17 +2,14 @@
 
 var test = require('tap').test,
 
-    fs = require('fs'),
     path = require('path'),
-    exec = require('child_process').exec,
-    execSync = require('sync-exec'),
 
 	Driver = require('../../lib/driver'),
 	Ds18x20 = require('../../lib/ds18x20');
 
 function testIsLoaded(t, testDirName, expectedResult) {
 
-	var driver = new Driver(fs, exec, execSync, path.resolve(__dirname, testDirName)),
+	var driver = new Driver(path.resolve(__dirname, testDirName)),
 		ds18x20 = new Ds18x20(driver, null, null, null);
 
 	function verify(t, err, result) {
