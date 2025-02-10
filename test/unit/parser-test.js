@@ -14,5 +14,4 @@ interpreted({
     },
 
     update: process.env.UPDATE_TEST === 'true'
-
 });

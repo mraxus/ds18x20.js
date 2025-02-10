@@ -1,7 +1,6 @@
 "use strict";
 
 var test = require('tap').test,
-	fs = require('fs'),
 	path = require('path'),
 
 	Reader = require('../../lib/reader'),
@@ -12,7 +11,7 @@ var test = require('tap').test,
 
 function getTester(t, deviceId) {
 
-	var reader = new Reader(fs, path.resolve(__dirname, 'data', 'dirs', '6-devices')),
+	var reader = new Reader(path.resolve(__dirname, 'data', 'dirs', '6-devices')),
 		ds18x20 = new Ds18x20(null, null, reader, parser);
 
 	function verify(t, err, result) {
@@ -48,7 +47,7 @@ test('Getting the temperature from one device as a string input...', function (t
 test('Getting the temperature from non-existing device...', function (t) {
 
     var deviceId = '28-077777777777',
-        reader = new Reader(fs, path.resolve(__dirname, 'data', 'dirs', '6-devices')),
+        reader = new Reader(path.resolve(__dirname, 'data', 'dirs', '6-devices')),
         ds18x20 = new Ds18x20(null, null, reader, parser);
 
     function verify(t, err) {
